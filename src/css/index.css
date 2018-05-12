@@ -1,0 +1,99 @@
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 'PingFangSC-Regular','Microsoft YaHei';color:#333;outline:0;}
+body{background:#eee;}
+a,a:hover{color: inherit;background-color: transparent;text-decoration:none;}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #f3f3f6;
+}
+
+#app .menu {
+  height: 40px;
+  padding: 0 20px;
+  background-color: #5482ee;
+  box-shadow: 0 8px 20px 0 rgba(69,119,238,.48);
+}
+
+#app .menu li {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  margin-right: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #b3c8ff;
+}
+
+#app .menu li.active,
+#app .menu li:hover {
+  color: #fff;
+}
+#app .menu li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #f0f0f0;
+}
+
+#app .content {
+  padding: 100px;
+}
+
+/* 关于 */
+.about-content .submenu li {
+  display: inline-block;
+  margin-right: 40px;
+  text-decoration: underline;
+}
+
+.about-content .submenu li.active,
+.about-content .submenu li:hover {
+  color: #5482ee;
+}
+
+.about-content .title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
