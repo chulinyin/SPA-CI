@@ -1,11 +1,11 @@
 // 地址参数解析
-function rest(opt) {
+function rest (opt) {
   let matchers = opt.matchers || []
   matchers.forEach((it, index, list) => {
     list[index] = str2matcher(it)
   })
 
-  function str2matcher(url) {
+  function str2matcher (url) {
     let rest = {
       url,
       keys: []
@@ -18,14 +18,14 @@ function rest(opt) {
     console.log('reg', reg, rest.matcher)
     return rest
   }
-  
-  function getParams(path) {
+
+  function getParams (path) {
     let rest = {}
     matchers.find(it => {
       let result = it.matcher.exec(path)
-      if(result) {
+      if (result) {
         it.keys.forEach((key, index) => {
-          rest[key] = result[index+1] || ''
+          rest[key] = result[index + 1] || ''
         })
         return true
       }
@@ -33,12 +33,12 @@ function rest(opt) {
     return rest
   }
 
-  return function(context, next) {
+  return function (context, next) {
     console.log('rest middleware dispatched')
-    
+
     let req = context.request
     req.restParams = getParams(req.pathname)
-    if(req.hash) {
+    if (req.hash) {
       let hash = new URL(
         req.hash.substr(1),
         req.origin
@@ -51,4 +51,4 @@ function rest(opt) {
   }
 }
 
-export default rest;
+export default rest

@@ -7,10 +7,10 @@ import filter from './middleware/filter'
 import AuthFilter from './filter/auth'
 import router from './middleware/router'
 
-const spa = new SPA();
+const spa = new SPA()
 
 const app = {
-  start(opt) {
+  start (opt) {
     // 添加中间件
     spa.add(rest(opt))
     spa.add(history())
@@ -20,23 +20,23 @@ const app = {
     spa.add(router(opt))
 
     // 添加触发器
-    const monitor = new Monitor({
-      onchange(e) {
+    const monitor = new Monitor({ // eslint-disable-line
+      onchange (e) {
         let context = {
           request: new URL(e.newValue)
         }
         spa.dispatch(context)
-        activeNavigation(context);
+        activeNavigation(context)
       }
     })
 
-    const menuEle =  document.querySelector('#app .menu')
-    let activeEle= null
-    function activeNavigation(context) {
-      const selector = `[href*="#${context.hash && context.hash.pathname|| context.request.pathname}"]`
+    const menuEle = document.querySelector('#app .menu')
+    let activeEle = null
+    function activeNavigation (context) {
+      const selector = `[href*="#${(context.hash && context.hash.pathname) || context.request.pathname}"]`
       const ele = menuEle.querySelector(selector)
       const targetEle = ele && ele.parentElement
-      if(targetEle && activeEle !== targetEle) {
+      if (targetEle && activeEle !== targetEle) {
         activeEle && (activeEle.classList.remove('active'))
         targetEle.classList.add('active')
         activeEle = targetEle

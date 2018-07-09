@@ -1,17 +1,17 @@
-let mws = [];
+let mws = []
 
 class SPA {
-  add(mw) {
-    if(typeof mw === 'function') {
+  add (mw) {
+    if (typeof mw === 'function') {
       mws.push(mw)
     }
   }
 
-  dispatch(context) {
+  dispatch (context) {
     let index = 0
     let next = () => {
       let mw = mws[index++]
-      if(mw) {
+      if (mw) {
         mw(context, next)
       }
     }

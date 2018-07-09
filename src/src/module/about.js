@@ -1,7 +1,7 @@
 import Module from './module'
 
 class About extends Module {
-  constructor(opt) {
+  constructor (opt) {
     super(opt)
     this._templte = `
       <div class="about-content">
@@ -15,15 +15,15 @@ class About extends Module {
       </div>
     `
   }
-  build(opt) {
+  build (opt) {
     super.build(opt)
     this._body = document.createElement('div')
     this._body.innerHTML = this._templte
   }
 
-  show(context) {
-    super.show(context) 
+  show (context) {
+    super.show(context)
   }
 }
 
-export default About;
+export default About

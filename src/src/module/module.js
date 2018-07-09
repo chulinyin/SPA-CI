@@ -1,28 +1,28 @@
 // 模块基类
 class Module {
-  constructor(config) {
+  constructor (config) {
     this._parent = config.parent || config._body.querySelector('.child')
   }
 
-  build(opt) {}
+  build (opt) { }
 
-  show(context) {
-    if(this._body) {
+  show (context) {
+    if (this._body) {
       this._parent.innerHTML = ''
       this._parent.appendChild(this._body)
     }
   }
 
-  refresh() {
+  refresh () {
     let childView = this._body.querySelector('.child')
-    if(childView) {
+    if (childView) {
       childView.innerHTML = ''
     }
   }
 
-  hide() {
+  hide () {
     let childView = this._body.querySelector('.child')
-    if(childView) {
+    if (childView) {
       childView.innerHTML = ''
     }
     // 缓存一下？

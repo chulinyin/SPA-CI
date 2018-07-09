@@ -1,8 +1,7 @@
 import Module from './module'
 
 class User extends Module {
-
-  build(opt) {
+  build (opt) {
     super.build(opt)
     this._body = document.createElement('div')
     this._info = document.createElement('p')
@@ -10,22 +9,22 @@ class User extends Module {
     console.log('user build')
   }
 
-  show(context) {
+  show (context) {
     console.log('user show')
-    super.show(context) 
+    super.show(context)
     let hash = context.hash
     this._updateInfo(hash.restParams.uid)
   }
 
-  refresh(context) {
+  refresh (context) {
     super.refresh()
     let hash = context.hash
     this._updateInfo(hash.restParams.uid)
   }
 
-  _updateInfo(uid) {
+  _updateInfo (uid) {
     this._info.innerHTML = `大家好，我是编号${uid} ～`
   }
 }
 
-export default User;
+export default User
